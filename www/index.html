@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html><!--HTML5 doctype-->
+
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta http-equiv="Pragma" content="no-cache">
+<script type="text/javascript" charset="utf-8" src="intelxdk.js"></script>
+<script type="text/javascript" language="javascript">
+    var isIntel=window.intel&&window.intel.xdk
+    // This event handler is fired once the intel libraries are ready
+    function onDeviceReady() {
+        //hide splash screen now that our app is ready to run
+        intel.xdk.device.hideSplashScreen();
+        setTimeout(function () {
+            $.ui.launch();
+        }, 50);
+    }
+    //initial event handler to detect when intel is ready to roll
+    document.addEventListener("intel.xdk.device.ready", onDeviceReady, false);
+</script>
+<script src="js/appframework.ui.min.js"></script>
+<script>
+    if(isIntel)
+        $.ui.autoLaunch = false;
+    $.ui.useOSThemes = true; //Change this to false to force a device theme
+    $.ui.blockPageScroll();
+    $(document).ready(function () {
+        if ($.ui.useOSThemes && (!$.os.ios||$.os.ios7))
+            $("#afui").removeClass("ios");
+    });
+</script>
+<link href="css/icons.css" rel="stylesheet" type="text/css">
+<link href="css/af.ui.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="afui" class="ios">
+    <div id="header" class="header"></div>
+    <div id="content" style="">
+        <div id="news" class="panel" style="" data-header="newsHeader">
+            <ul class="list" style="" data-appbuilder-object="list">
+                <li><a href="#detailnews1">Council replaced by robots!</a>
+                </li>
+                <li><a href="#detailnews2">Robot rights signed!</a>
+                </li>
+                <li><a href="#detailnews3">Robot council bid for world domination!</a>
+                </li>
+                <li><a href="#detailnews1">Council replaced by robots!</a>
+                </li>
+                <li><a href="#detailnews2">Robot rights signed!</a>
+                </li>
+                <li><a href="#detailnews3">Robot council bid for world domination!</a>
+                </li>
+                <li><a href="#detailnews1">Council replaced by robots!</a>
+                </li>
+                <li><a href="#detailnews2">Robot rights signed!</a>
+                </li>
+                <li><a href="#detailnews3">Robot council bid for world domination!</a>
+                </li>
+                <li><a href="#detailnews1">Council replaced by robots!</a>
+                </li>
+                <li><a href="#detailnews2">Robot rights signed!</a>
+                </li>
+                <li><a href="#detailnews3">Robot council bid for world domination!</a>
+                </li>
+            </ul>
+        </div>
+        <div id="detailnews1" title="Item Details" class="panel" style="">
+            <h1>Council replaced by robots</h1>
+            <p>Newry and Mourne council replaced by robot workers, nobody notices.</p>
+        </div>
+        <div id="detailnews2" title="Item Details" class="panel" style="">
+            <h1>Robots rights signed</h1>
+            <p>Council signs in overlord rights for all robots, spokesman said "Humans
+                now serve us!"</p>
+        </div>
+        <div id="detailnews3" title="Item Details" class="panel" style="">
+            <h1>Robot council bid for world domination</h1>
+            <p>World held hostage by council of terminators</p>
+        </div>
+
+
+
+        <div id="events" class="panel" data-header="eventsHeader" style="">
+            <h2>Content</h2>
+        </div>
+
+        <div id="can" class="panel" data-header="canHeader" style="">
+            <h2>I WANNA BE ELECTED!</h2>
+        </div>
+
+        <div id="map" class="panel" data-header="mapHeader" style="">
+            <h2>More Stuff</h2>
+        </div>
+
+        <div id="settings" class="panel" data-header="settingsHeader" style="">
+            <h2>Settings Content</h2>
+        </div>
+    </div>
+
+
+    <header id="newsHeader">
+        <h1>NEWS</h1>
+        <a href="#settings" class="button icon settings"></a>
+    </header>
+    <header id="eventsHeader">
+        <h1>EVENTS</h1>
+        <a href="#settings" class="button icon settings"></a>
+    </header>
+    <header id="canHeader">
+        <h1>CANDIDATES</h1>
+        <a href="#settings" class="button icon settings"></a>
+    </header>
+    <header id="mapHeader">
+        <h1>MAP</h1>
+        <a href="#settings" class="button icon settings"></a>
+    </header>
+    <header id="settingsHeader">
+        <h1>SETTINGS</h1>
+    </header>
+
+
+
+
+    <div id="navbar" class="footer">
+        <a href="#news" data-transition="fade" class="icon new"></a>
+        <a href="#events" data-transition="fade" class="icon calendar"></a>
+        <a href="#can" data-transition="fade" class="icon user"></a>
+        <a href="#map" data-transition="fade" class="icon location"></a>
+
+    </div>
+</div>
+
+
+
+
+</body>
+
+
+
+
+
+</html>
